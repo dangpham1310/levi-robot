@@ -1,0 +1,113 @@
+{% extends 'base.html' %}
+
+{% block title %}User Page{% endblock %}
+
+{% block active_users %}active{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <form action="{{ url_for('routes.search') }}" method="POST">
+        <input type="text" name="phoneNumber" placeholder="Enter your search">
+        <button type="submit">Search</button>
+    </form>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Username</th>
+                <th>Trạng Thái</th>
+                <th>Tùy chỉnh</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in users %}
+                <tr>
+                    {% if user.role == "User" %}
+                        <td>{{ user.id }}</td>
+                        <td>{{ user.username }}</td>
+                        <td {% if user.status != "Active" %}class="text-danger"{% endif %}>{{ user.status }}</td>
+                        <td>
+                            <div class="btn-group">
+                                {% if user.status != "Active" %}
+                                <form action="{{ url_for('routes.active') }}" method="POST">
+                                    <input type="hidden" name="user_name" value="{{ user.username }}">
+                                    <button type="submit" class="btn btn-primary">Kích Hoạt</button>
+                                </form>
+                                {% else %}
+                                <form action="{{ url_for('routes.deactivate') }}" method="POST">
+                                    <input type="hidden" name="user_name" value="{{ user.username }}">
+                                    <button type="submit" class="btn btn-primary">Hủy Kích Hoạt</button>
+                                </form>
+                                {% endif %}
+                        
+                                <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#editModal{{ user.id }}">Sửa</button>
+                        
+                                <form action="{{ url_for('routes.changepass') }}" method="POST">
+                                    <input type="hidden" name="changepass" value="{{ user.username }}">
+                                    <button type="submit" class="btn btn-success">Đổi mật khẩu</button>
+                                </form>
+                                <form action="{{ url_for('routes.delete') }}" method="POST">
+                                    <input type="hidden" name="delete" value="{{ user.username }}">
+                                    <button type="submit" class="btn btn-danger">Xóa</button>
+                                </form>
+                            </div>
+                        </td>
+                        
+                        <!-- Modal -->
+                        <div class="modal fade" id="editModal{{ user.id }}" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="editModalLabel">Edit User</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form action="{{ url_for('routes.edit') }}" method="POST">
+                                            <input type="hidden" name="user_name" value="{{ user.username }}">
+                                            <!-- Add your form fields here -->
+                                            <div class="form-group">
+                                                <label for="username">Tên Đăng Nhập</label>
+                                                <input type="text" class="form-control" id="username" name="username", value="{{user.username}}", readonly="true">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="status_actives">Trạng Thái Hoạt Động</label>
+                                                <input type="text" list="status_active" class="form-control" id="status_actives" name="status_actives">
+                                                <datalist id="status_active">
+                                                    <option value="Active">
+                                                    <option value="Unactive">
+                                                  </datalist>
+                                            </div>
+                                                                                        <div class="form-group">
+                                                <label for="newusername">Tên Đăng Nhập</label>
+                                                <input type="text" class="form-control" id="newusername" name="newusername", value="{{user.username}}">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="link">Link Facebook</label>
+                                                <input type="link" class="form-control" id="link" name="link", value="{{user.link}}">
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                <button type="submit" class="btn btn-primary">Save Changes</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        
+                        
+                    {% endif %}
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

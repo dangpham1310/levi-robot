@@ -1,0 +1,349 @@
+<html lang="en">
+
+<head>
+    <style rc-util-key="@ant-design-icons">
+        .anticon {
+            display: inline-block;
+            color: inherit;
+            font-style: normal;
+            line-height: 0;
+            text-align: center;
+            text-transform: none;
+            vertical-align: -0.125em;
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .anticon>* {
+            line-height: 1;
+        }
+
+        .anticon svg {
+            display: inline-block;
+        }
+
+        .anticon::before {
+            display: none;
+        }
+
+        .anticon .anticon-icon {
+            display: block;
+        }
+
+        .anticon[tabindex] {
+            cursor: pointer;
+        }
+
+        .anticon-spin::before,
+        .anticon-spin {
+            display: inline-block;
+            -webkit-animation: loadingCircle 1s infinite linear;
+            animation: loadingCircle 1s infinite linear;
+        }
+
+        @-webkit-keyframes loadingCircle {
+            100% {
+                -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes loadingCircle {
+            100% {
+                -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+    <meta charset="utf-8">
+    <link rel="icon" href="./icon.png">
+    <link rel="shortcut icon" href="./icon.png" type="image/jpg">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    <meta name="theme-color" content="#000000">
+    <link rel="apple-touch-icon" href="logo192.png">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Web quản trị</title>
+    <meta http-equiv="REFRESH" content="1800">
+    <meta name="googlebot" content="noodp, index, follow">
+    <meta name="robots" content="noodp, index, follow">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="address=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="description" content="Tool hỗ trợ kéo anh em về bờ">
+    <link href="../static/css/1657555042698.1.df41bc4d66316ea41f8b.css" rel="stylesheet">
+    <link href="../static/css/1657555042698.5.df41bc4d66316ea41f8b.css" rel="stylesheet">
+    <style>
+        .--savior-overlay-transform-reset {
+            transform: none !important;
+        }
+
+        .--savior-overlay-z-index-top {
+            z-index: 2147483643 !important;
+        }
+
+        .--savior-overlay-position-relative {
+            position: relative;
+        }
+
+        .--savior-overlay-overflow-hidden {
+            overflow: hidden !important;
+        }
+
+        .--savior-overlay-overflow-x-visible {
+            overflow-x: visible !important;
+        }
+
+        .--savior-overlay-overflow-y-visible {
+            overflow-y: visible !important;
+        }
+
+        .--savior-overlay-z-index-reset {
+            z-index: auto !important;
+        }
+
+        .--savior-overlay-display-none {
+            display: none !important;
+        }
+
+        .--savior-overlay-clearfix {
+            clear: both;
+        }
+
+        .--savior-overlay-reset-filter {
+            filter: none !important;
+            backdrop-filter: none !important;
+        }
+
+        .--savior-tooltip-host {
+            z-index: 9999;
+            position: absolute;
+            top: 0;
+        }
+
+        /*Override css styles for Twitch.tv*/
+        main.--savior-overlay-z-index-reset {
+            z-index: auto !important;
+        }
+
+        main.--savior-overlay-z-index-top {
+            z-index: auto !important;
+        }
+
+        main.--savior-overlay-z-index-top .channel-root__player-container+div,
+        main.--savior-overlay-z-index-top .video-player-hosting-ui__container+div {
+            opacity: 0.1;
+        }
+
+        .--savior-backdrop {
+            position: fixed !important;
+            z-index: 2147483642 !important;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            width: 100vw !important;
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+
+        .--savior-overlay-twitter-video-player {
+            position: fixed;
+            width: 80%;
+            height: 80%;
+            top: 10%;
+            left: 10%;
+        }
+
+        /* Fix conflict css with zingmp3 */
+        .zm-video-modal.--savior-overlay-z-index-reset {
+            position: absolute;
+        }
+
+        /* Dirty hack for xvideos99 */
+        #page #main.--savior-overlay-z-index-reset {
+            z-index: auto !important;
+        }
+
+        /* Overlay for ok.ru */
+        #vp_w.--savior-overlay-z-index-reset.media-layer.media-layer__video {
+            position: absolute;
+            overflow-y: hidden;
+        }
+
+        /* Fix missing controller for tv.naver.com */
+        .--savior-overlay-z-index-top.rmc_controller,
+        .--savior-overlay-z-index-top.rmc_setting_intro,
+        .--savior-overlay-z-index-top.rmc_highlight,
+        .--savior-overlay-z-index-top.rmc_control_settings {
+            z-index: 2147483644 !important;
+        }
+
+        /* Dirty hack for douyi.com */
+        .swiper-wrapper.--savior-overlay-z-index-reset .swiper-slide:not(.swiper-slide-active),
+        .swiper-wrapper.--savior-overlay-transform-reset .swiper-slide:not(.swiper-slide-active) {
+            display: none;
+        }
+
+        .videoWrap+div>div {
+            pointer-events: unset;
+        }
+
+        /* Dirty hack for fpt.ai */
+        .mfp-wrap.--savior-overlay-z-index-top {
+            position: relative;
+        }
+
+        .mfp-wrap.--savior-overlay-z-index-top .mfp-close {
+            display: none;
+        }
+
+        .mfp-wrap.--savior-overlay-z-index-top .mfp-content {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        section.--savior-overlay-z-index-reset>main[role="main"].--savior-overlay-z-index-reset+nav {
+            z-index: -1 !important;
+        }
+
+        section.--savior-overlay-z-index-reset>main[role="main"].--savior-overlay-z-index-reset section.--savior-overlay-z-index-reset div.--savior-overlay-z-index-reset~div {
+            position: relative;
+        }
+
+        div[class^="tiktok"].--savior-overlay-z-index-reset {
+            z-index: 2147483644 !important;
+        }
+
+        @-moz-keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @-webkit-keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @-o-keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body><noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root">
+        <div class="login-page">
+            <div class="auth-login-container">
+                <h2>Đăng Nhập</h2>
+                <div class="ant-spin-nested-loading">
+                    <div class="ant-spin-container">
+                        <form class="ant-form ant-form-vertical form-cms" action="{{url_for('routes.login')}}" method="POST">
+                            <div role="row" class="ant-row ant-form-item ant-form-item-has-success">
+                                <div role="cell" class="ant-col ant-form-item-control">
+                                    <div class="ant-form-item-control-input">
+                                        <div class="ant-form-item-control-input-content"><input
+                                                placeholder="Số điện thoại" id="username"
+                                                class="ant-input ant-input-status-success" type="text" for="username" ,
+                                                name="username">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div role="row" class="ant-row ant-form-item ant-form-item-has-success">
+                                <div role="cell" class="ant-col ant-form-item-control">
+                                    <div class="ant-form-item-control-input">
+                                        <div class="ant-form-item-control-input-content"><span
+                                                class="ant-input-affix-wrapper ant-input-password ant-input-affix-wrapper-status-success">
+                                                <input placeholder="Mật Khẩu Đăng Nhập" action="click" id="password"
+                                                    type="password" class="ant-input" name="password"><span
+                                                    class="ant-input-suffix"><span role="img" aria-label="eye-invisible"
+                                                        tabindex="-1"
+                                                        class="anticon anticon-eye-invisible ant-input-password-icon"><svg
+                                                            viewBox="64 64 896 896" focusable="false"
+                                                            data-icon="eye-invisible" width="1em" height="1em"
+                                                            fill="currentColor" aria-hidden="true">
+                                                            <path
+                                                                d="M942.2 486.2Q889.47 375.11 816.7 305l-50.88 50.88C807.31 395.53 843.45 447.4 874.7 512 791.5 684.2 673.4 766 512 766q-72.67 0-133.87-22.38L323 798.75Q408 838 512 838q288.3 0 430.2-300.3a60.29 60.29 0 000-51.5zm-63.57-320.64L836 122.88a8 8 0 00-11.32 0L715.31 232.2Q624.86 186 512 186q-288.3 0-430.2 300.3a60.3 60.3 0 000 51.5q56.69 119.4 136.5 191.41L112.48 835a8 8 0 000 11.31L155.17 889a8 8 0 0011.31 0l712.15-712.12a8 8 0 000-11.32zM149.3 512C232.6 339.8 350.7 258 512 258c54.54 0 104.13 9.36 149.12 28.39l-70.3 70.3a176 176 0 00-238.13 238.13l-83.42 83.42C223.1 637.49 183.3 582.28 149.3 512zm246.7 0a112.11 112.11 0 01146.2-106.69L401.31 546.2A112 112 0 01396 512z">
+                                                            </path>
+                                                            <path
+                                                                d="M508 624c-3.46 0-6.87-.16-10.25-.47l-52.82 52.82a176.09 176.09 0 00227.42-227.42l-52.82 52.82c.31 3.38.47 6.79.47 10.25a111.94 111.94 0 01-112 112z">
+                                                            </path>
+                                                        </svg></span></span></span></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div role="row" class="ant-row ant-form-item">
+                                <div role="cell" class="ant-col ant-form-item-control">
+                                    <div class="ant-form-item-control-input">
+                                        <div class="ant-form-item-control-input-content">
+                                            <button type="submit"
+                                                class="ant-btn ant-btn-primary btn-login"><span role="img"
+                                                    aria-label="user" class="anticon anticon-user"><svg
+                                                        viewBox="64 64 896 896" focusable="false" data-icon="user"
+                                                        width="1em" height="1em" fill="currentColor" aria-hidden="true">
+                                                        <path
+                                                            d="M858.5 763.6a374 374 0 00-80.6-119.5 375.63 375.63 0 00-119.5-80.6c-.4-.2-.8-.3-1.2-.5C719.5 518 760 444.7 760 362c0-137-111-248-248-248S264 225 264 362c0 82.7 40.5 156 102.8 201.1-.4.2-.8.3-1.2.5-44.8 18.9-85 46-119.5 80.6a375.63 375.63 0 00-80.6 119.5A371.7 371.7 0 00136 901.8a8 8 0 008 8.2h60c4.4 0 7.9-3.5 8-7.8 2-77.2 33-149.5 87.8-204.3 56.7-56.7 132-87.9 212.2-87.9s155.5 31.2 212.2 87.9C779 752.7 810 825 812 902.2c.1 4.4 3.6 7.8 8 7.8h60a8 8 0 008-8.2c-1-47.8-10.9-94.3-29.5-138.2zM512 534c-45.9 0-89.1-17.9-121.6-50.4S340 407.9 340 362c0-45.9 17.9-89.1 50.4-121.6S466.1 190 512 190s89.1 17.9 121.6 50.4S684 316.1 684 362c0 45.9-17.9 89.1-50.4 121.6S557.9 534 512 534z">
+                                                        </path>
+                                                    </svg></span><span>Đăng Nhập</span></button>
+                                                </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="btn-group">
+                    <button type="button" class="ant-btn ant-btn-default link-href">
+                        <span role="img"
+                            aria-label="unlock" class="anticon anticon-unlock"><svg viewBox="64 64 896 896"
+                                focusable="false" data-icon="unlock" width="1em" height="1em" fill="currentColor"
+                                aria-hidden="true">
+                                <path
+                                    d="M832 464H332V240c0-30.9 25.1-56 56-56h248c30.9 0 56 25.1 56 56v68c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8v-68c0-70.7-57.3-128-128-128H388c-70.7 0-128 57.3-128 128v224h-68c-17.7 0-32 14.3-32 32v384c0 17.7 14.3 32 32 32h640c17.7 0 32-14.3 32-32V496c0-17.7-14.3-32-32-32zM540 701v53c0 4.4-3.6 8-8 8h-40c-4.4 0-8-3.6-8-8v-53a48.01 48.01 0 1156 0z">
+                                </path>
+                            </svg></span><span>Quên Mật Khẩu</span></button><button type="button"
+                        class="ant-btn ant-btn-default link-href"><span role="img" aria-label="user-add"
+                            class="anticon anticon-user-add"><svg viewBox="64 64 896 896" focusable="false"
+                                data-icon="user-add" width="1em" height="1em" fill="currentColor" aria-hidden="true">
+                                <path
+                                    d="M678.3 642.4c24.2-13 51.9-20.4 81.4-20.4h.1c3 0 4.4-3.6 2.2-5.6a371.67 371.67 0 00-103.7-65.8c-.4-.2-.8-.3-1.2-.5C719.2 505 759.6 431.7 759.6 349c0-137-110.8-248-247.5-248S264.7 212 264.7 349c0 82.7 40.4 156 102.6 201.1-.4.2-.8.3-1.2.5-44.7 18.9-84.8 46-119.3 80.6a373.42 373.42 0 00-80.4 119.5A373.6 373.6 0 00137 888.8a8 8 0 008 8.2h59.9c4.3 0 7.9-3.5 8-7.8 2-77.2 32.9-149.5 87.6-204.3C357 628.2 432.2 597 512.2 597c56.7 0 111.1 15.7 158 45.1a8.1 8.1 0 008.1.3zM512.2 521c-45.8 0-88.9-17.9-121.4-50.4A171.2 171.2 0 01340.5 349c0-45.9 17.9-89.1 50.3-121.6S466.3 177 512.2 177s88.9 17.9 121.4 50.4A171.2 171.2 0 01683.9 349c0 45.9-17.9 89.1-50.3 121.6C601.1 503.1 558 521 512.2 521zM880 759h-84v-84c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v84h-84c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h84v84c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8v-84h84c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8z">
+                                </path>
+                            </svg></span>
+                        <span>Đăng Ký</span>
+                    </button><a class="link-href contact-amin" href="#"><span></span></a></div>
+            </div>
+        </div>
+    </div>
+</body>
+<div style="position: absolute; top: 0px; display: block !important;"></div>
+
+</html>
